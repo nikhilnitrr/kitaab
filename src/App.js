@@ -7,7 +7,6 @@ import {ProductList} from "./pages/ProductList"
 function App() {
   return (
     <div className="App">
-      <h1>kitaab</h1>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/products" element={<ProductList/>}/>

@@ -14,7 +14,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "nonFiction",
     description:
       "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
   },
