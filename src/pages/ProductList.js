@@ -35,6 +35,7 @@ const ProductList = () => {
               <input
                 type="checkbox"
                 name={category.categoryName}
+                checked={categoryFilter.includes(category.categoryName)}
                 onChange={handleChange}
               />
             </label>
