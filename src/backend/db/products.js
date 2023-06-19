@@ -11,7 +11,7 @@ export const products = [
     title: "You Can WIN",
     author: "Shiv Khera",
     price: "5000",
-    categoryName: "non-fiction",
+    categoryName: "nonFiction",
   },
   {
     _id: uuid(),

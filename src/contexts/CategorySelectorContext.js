@@ -3,31 +3,20 @@ import { createContext, useState } from "react";
 const CategorySelectorContext = createContext();
 
 const CategorySelectorProvider = ({ children }) => {
-  
-    const categorySelection = {
-    fiction: false,
-    horror: false,
-    nonFiction: false,
-  };
-  
-  const [userCategorySelection, setUserCategorySelection] =
-    useState(categorySelection);
-  
-    const selectCategory = (categoryName) => {
-    setUserCategorySelection((userCategorySelection) => {
-      return { ...userCategorySelection, [categoryName]: true };
+  const [categoryFilter, setCategoryFilter] = useState([]);
+  const addToCategoryFilter = (category) => {
+    setCategoryFilter((categoryFilter) => {
+      return [...categoryFilter, category];
     });
   };
-  
-  const unselectCategory = (categoryName) => {
-    setUserCategorySelection((userCategorySelection) => {
-      return { ...userCategorySelection, [categoryName]: false };
+  const removeFromCategoryFilter = (category) => {
+    setCategoryFilter((categoryFilter) => {
+      return categoryFilter.filter((item) => item !== category);
     });
   };
-
   return (
     <CategorySelectorContext.Provider
-      value={{ userCategorySelection, selectCategory, unselectCategory }}
+      value={{ categoryFilter, addToCategoryFilter, removeFromCategoryFilter }}
     >
       {children}
     </CategorySelectorContext.Provider>

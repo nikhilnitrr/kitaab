@@ -6,9 +6,9 @@ import { CategorySelectorContext } from "../contexts/CategorySelectorContext";
 const CategoryCard = ({ book }) => {
   const navigate = useNavigate();
   const { categoryName, description } = book;
-  const { selectCategory } = useContext(CategorySelectorContext);
+  const { addToCategoryFilter } = useContext(CategorySelectorContext);
   const handleClick = () => {
-    selectCategory(categoryName);
+    addToCategoryFilter(categoryName);
     navigate("/products");
   };
   return (

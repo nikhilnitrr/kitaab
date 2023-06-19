@@ -18,7 +18,7 @@ const ProductProvider = ({children}) => {
     useEffect(() => {
         getProducts();
     }, [])
-    return <ProductContext.Provider value={{bookList}}>{children}</ProductContext.Provider>
+    return <ProductContext.Provider value={{bookList, setBookList}}>{children}</ProductContext.Provider>
 }
 
 export {ProductContext, ProductProvider};
